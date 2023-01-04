@@ -1,3 +1,4 @@
+using System.ComponentModel.DataAnnotations.Schema;
 using Domain.Primitives;
 
 namespace Domain.Entities;
@@ -11,16 +12,18 @@ public class Entry : Entity
 
     // Total installment that arranged btw companies
     public int Installment { get; set; }
+    
+    public Estimation? Estimation { get; set; }
+    
+    public decimal Amount { get; set; }
+    public bool IsFinalized { get; set; }
 
-    public DateOnly DueDate { get; set; }
+    public Season? Season { get; set; }
+    public int SeasonId { get; set; }
     
-    public decimal Estimated { get; set; }
-    public decimal Actual { get; set; }
-    
-    
-    public string? Season { get; set; }
     public string? OrderNumber { get; set; }
     public string? InvoiceNumber { get; set; }
+    
     
     public bool Confirmed { get; set; }
     public DateTime ConfirmationDate { get; set; }
@@ -30,4 +33,4 @@ public class Entry : Entity
 
     public bool Completed { get; set; }
     
-}
+} 

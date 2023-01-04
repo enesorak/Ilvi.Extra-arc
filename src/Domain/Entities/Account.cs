@@ -6,6 +6,9 @@ public class Account :Entity
 {
     public string Name { get; set; }
 
+    public AccountType AccountType { get; set; }
+    public int AccountTypeId { get; set; }
+    
     public AccountGroup AccountGroup { get; set; }
     public int AccountGroupId { get; set; }
     
@@ -14,3 +17,4 @@ public class Account :Entity
     public string? TaxNumber { get; set; }
     
 }
+

@@ -8,7 +8,132 @@ public static class ModelBuilderExtension
     public static void Seed(this ModelBuilder modelBuilder)
     {
         var rnd = new Random();
- 
+
+        var seasons = new List<Season>()
+        {
+            new()
+            {
+                Id = 1,
+                SourceId = "2022K",
+                CreatedUser = "Seed",
+                UpdatedUser = "Seed",
+                CreatedDate = DateTime.Now,
+                UpdatedDate = DateTime.Now,
+                Blocked = false,
+                Name = "2022 Kış",
+                IsCurrent = false
+            },
+
+            new()
+            {
+                Id = 2,
+                SourceId = "2022Y",
+                CreatedUser = "Seed",
+                UpdatedUser = "Seed",
+                CreatedDate = DateTime.Now,
+                UpdatedDate = DateTime.Now,
+                Blocked = false,
+                Name = "2022 Yaz",
+                IsCurrent = false
+            },
+            new()
+            {
+                Id = 3,
+                SourceId = "4MVSM",
+                CreatedUser = "Seed",
+                UpdatedUser = "Seed",
+                CreatedDate = DateTime.Now,
+                UpdatedDate = DateTime.Now,
+                Blocked = false,
+                Name = "4 Mevsim",
+                IsCurrent = false
+            },
+            new()
+            {
+                Id = 4,
+                SourceId = "2023Y",
+                CreatedUser = "Seed",
+                UpdatedUser = "Seed",
+                CreatedDate = DateTime.Now,
+                UpdatedDate = DateTime.Now,
+                Blocked = false,
+                Name = "2023 Yaz",
+                IsCurrent = false
+            },
+            new()
+            {
+                Id = 5,
+                SourceId = "2023K",
+                CreatedUser = "Seed",
+                UpdatedUser = "Seed",
+                CreatedDate = DateTime.Now,
+                UpdatedDate = DateTime.Now,
+                Blocked = false,
+                Name = "2023 Kış",
+                IsCurrent = false
+            },
+
+
+        };
+
+        var accountTypes = new List<AccountType>()
+        {
+           new()
+            {
+                Id = 1,
+                Name = "Tedarikçi",
+                SourceId = "1",
+                CreatedUser = "Seed",
+                UpdatedUser = "Seed",
+                CreatedDate = DateTime.Now,
+                UpdatedDate = DateTime.Now,
+                Blocked = false
+            },
+            new()
+            {
+                Id = 2,
+                Name = "Mağaza",
+                SourceId = "5",
+                CreatedUser = "Seed",
+                UpdatedUser = "Seed",
+                CreatedDate = DateTime.Now,
+                UpdatedDate = DateTime.Now,
+                Blocked = false
+            },
+            new()
+            {
+                Id = 3,
+                Name = "Banka Hesabı",
+                SourceId = "6",
+                CreatedUser = "Seed",
+                UpdatedUser = "Seed",
+                CreatedDate = DateTime.Now,
+                UpdatedDate = DateTime.Now,
+                Blocked = false
+            },
+            new()
+            {
+                Id = 4,
+                Name = "Nakit Kasa",
+                SourceId = "7",
+                CreatedUser = "Seed",
+                UpdatedUser = "Seed",
+                CreatedDate = DateTime.Now,
+                UpdatedDate = DateTime.Now,
+                Blocked = false
+            }
+        };
+       
+        
+        
+        
+        modelBuilder.Entity<AccountType>().HasData(accountTypes);
+        modelBuilder.Entity<Season>().HasData(seasons);
+        
+        
+        
+
+
         modelBuilder.Entity<AccountGroup>().HasData(
             new List<AccountGroup>()
             {
@@ -383,6 +508,7 @@ public static class ModelBuilderExtension
                 Id = id,
                 SourceId = $"Source{id}",
                 AccountGroupId = rnd.Next(1,50),
+                AccountTypeId = 1,
                 CreatedUser = "seed",
                 UpdatedUser = "seed",
                 CreatedDate = DateTime.Now,

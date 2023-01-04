@@ -24,6 +24,10 @@ public class AppDbContext : DbContext
     public DbSet<Entry> Entries { get; set; }
     public DbSet<EntryType> EntryTypes { get; set; }
     public DbSet<Payment> Payments { get; set; }
+    public DbSet<Estimation> Estimations { get; set; }
+    public DbSet<AccountType> AccountTypes { get; set; }
+    public DbSet<Season> Seasons { get; set; }
+    public DbSet<AccountGroup> AccountGroups { get; set; }
    
 
     protected override void ConfigureConventions(ModelConfigurationBuilder configurationBuilder)

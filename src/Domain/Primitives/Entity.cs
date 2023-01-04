@@ -1,6 +1,6 @@
 namespace Domain.Primitives;
 
-public class Entity: IAuditable, IBlock
+public abstract class Entity: IAuditable, IBlock
 {
     public int Id { get; set; }
     public string SourceId { get; set; } = string.Empty;
